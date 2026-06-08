@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amaliy vazifa</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2937;
+      background: #f3f4f6;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    main {
+      width: min(900px, 100%);
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 14px 35px rgba(31, 41, 55, 0.12);
+      overflow: hidden;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ff573d 0 48%, #f7f7f7 48% 100%);
+      min-height: 430px;
+      padding: 34px 42px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 34px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 16px 0 28px;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1;
+      color: #ffffff;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #111827;
+      text-transform: uppercase;
+    }
+
+    .brand::before,
+    .level::before {
+      content: "";
+      width: 24px;
+      height: 3px;
+      background: currentColor;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .task-card {
+      max-width: 460px;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 28px 32px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.16);
+    }
+
+    ol {
+      margin: 0;
+      padding-left: 22px;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .side {
+      height: 100%;
+      display: grid;
+      align-content: space-between;
+      justify-items: center;
+      gap: 24px;
+    }
+
+    .level {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #1f2937;
+      text-transform: uppercase;
+    }
+
+    .level::before {
+      width: 12px;
+      height: 12px;
+      background: #ff573d;
+    }
+
+    .student {
+      width: min(290px, 100%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #ffe0d2;
+      position: relative;
+      display: grid;
+      place-items: end center;
+      box-shadow: inset 0 -18px 0 rgba(255, 87, 61, 0.18);
+      overflow: hidden;
+    }
+
+    .avatar {
+      position: relative;
+      width: 160px;
+      height: 230px;
+    }
+
+    .avatar::before {
+      content: "";
+      position: absolute;
+      left: 42px;
+      top: 4px;
+      width: 78px;
+      height: 62px;
+      background: #3b241d;
+      border-radius: 42px 42px 26px 26px;
+      transform: rotate(-8deg);
+      box-shadow: 18px 8px 0 #2a1915;
+    }
+
+    .head {
+      position: absolute;
+      left: 48px;
+      top: 42px;
+      width: 76px;
+      height: 86px;
+      background: #f4a35d;
+      border: 3px solid #6b3b22;
+      border-radius: 42% 45% 48% 50%;
+      z-index: 2;
+    }
+
+    .head::before,
+    .head::after {
+      content: "";
+      position: absolute;
+      top: 32px;
+      width: 8px;
+      height: 8px;
+      background: #1f2937;
+      border-radius: 50%;
+    }
+
+    .head::before {
+      left: 20px;
+    }
+
+    .head::after {
+      right: 20px;
+    }
+
+    .smile {
+      position: absolute;
+      left: 28px;
+      bottom: 22px;
+      width: 22px;
+      height: 10px;
+      border-bottom: 3px solid #7c2d12;
+      border-radius: 0 0 18px 18px;
+    }
+
+    .body {
+      position: absolute;
+      left: 30px;
+      bottom: 0;
+      width: 112px;
+      height: 112px;
+      background: #374151;
+      border-radius: 28px 28px 10px 10px;
+      z-index: 1;
+    }
+
+    .body::before {
+      content: "";
+      position: absolute;
+      left: 38px;
+      top: 0;
+      width: 36px;
+      height: 90px;
+      background: #f97316;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    }
+
+    .paper {
+      position: absolute;
+      left: 8px;
+      bottom: 22px;
+      width: 92px;
+      height: 70px;
+      background: #eef2f7;
+      border: 2px solid #cbd5e1;
+      transform: rotate(-9deg);
+      z-index: 3;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 28px 22px;
+      }
+
+      .side {
+        justify-items: start;
+      }
+
+      .level {
+        justify-self: start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div>
+        <div class="brand">Git</div>
+        <h1>Amaliy vazifa</h1>
+        <div class="task-card">
+          <ol>
+            <li>Kompyuteringizda yangi papka yarating.</li>
+            <li>Terminal orqali unga git init qilib oling.</li>
+            <li>Papka ichida <strong>index.html</strong> nomli fayl yarating.</li>
+            <li><strong>Ismingiz bilan branch oching</strong> va loyihangizni repositoryga <strong>git push</strong> qilib yuboring.</li>
+            <li><strong>3 ta commit</strong> yozib uy ishi uchun repository silkasini yuboring!</li>
+          </ol>
+        </div>
+      </div>
+      <aside class="side">
+        <div class="level">Junior</div>
+        <div class="student" aria-label="O'quvchi rasmi">
+          <div class="avatar">
+            <div class="head"><span class="smile"></span></div>
+            <div class="body"></div>
+            <div class="paper"></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
